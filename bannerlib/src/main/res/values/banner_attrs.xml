@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Banner">
+        <!--轮播方向-->
+        <attr name="banner_orientation" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+        <!--自动播放-->
+        <attr name="banner_autoPlay" format="boolean" />
+        <!--循环间隔-->
+        <attr name="banner_loopInterval" format="integer" />
+        <!--是否支持无限循环-->
+        <attr name="banner_isInfinityEnabled" format="boolean" />
+        <!--是否使用默认指示器-->
+        <attr name="banner_isDefaultIndicator" format="boolean" />
+        <!--默认指示器默认的样式-->
+        <attr name="banner_indicatorNormalRes" format="reference" />
+        <!--默认指示器选中的样式-->
+        <attr name="banner_indicatorSelectRes" format="reference" />
+        <!--默认指示器的位置，左、上、右、下-->
+        <attr name="banner_indicatorPosition" format="enum">
+            <enum name="left" value="0" />
+            <enum name="top" value="1" />
+            <enum name="right" value="2" />
+            <enum name="bottom" value="3" />
+        </attr>
+        <!--默认指示器内部的gravity-->
+        <attr name="banner_indicatorGravity" format="enum">
+            <enum name="left" value="0" />
+            <enum name="top" value="1" />
+            <enum name="right" value="2" />
+            <enum name="bottom" value="3" />
+            <enum name="center" value="4" />
+        </attr>
+        <!--默认指示器item大小-->
+        <attr name="banner_indicatorSize" format="dimension" />
+        <!--默认指示器的宽度-->
+        <attr name="banner_indicatorWidth" format="dimension" />
+        <!--默认指示器的高度-->
+        <attr name="banner_indicatorHeight" format="dimension" />
+        <!--默认指示器内item的编剧-->
+        <attr name="banner_indicatorItemSpace" format="dimension" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.qfxl.view.Banner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        app:banner_autoPlay="true"
+        app:banner_indicatorGravity="center"
+        app:banner_indicatorHeight="20dp"
+        app:banner_indicatorPosition="bottom"
+        app:banner_isDefaultIndicator="true"
+        app:banner_isInfinityEnabled="true"
+        app:banner_loopInterval="2000"
+        app:banner_orientation="horizontal" />
+
+    <com.qfxl.view.Banner
+        android:id="@+id/banner_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        app:banner_autoPlay="true"
+        app:banner_indicatorGravity="center"
+        app:banner_indicatorNormalRes="@drawable/sp_custom_indicator_normal"
+        app:banner_indicatorPosition="right"
+        app:banner_indicatorSelectRes="@drawable/sp_custom_indicator_selected"
+        app:banner_indicatorSize="5dp"
+        app:banner_indicatorWidth="20dp"
+        app:banner_isDefaultIndicator="true"
+        app:banner_isInfinityEnabled="true"
+        app:banner_loopInterval="2000"
+        app:banner_orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/banner" />
+</android.support.constraint.ConstraintLayout>
