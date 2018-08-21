@@ -55,7 +55,7 @@ class Banner : FrameLayout {
     /**
      * 设置layoutManeger
      */
-    var layoutManager: LinearLayoutManager? = null
+    var layoutManager: RecyclerView.LayoutManager? = null
         set(value) {
             field = value
             bannerRv.layoutManager = field
@@ -63,7 +63,7 @@ class Banner : FrameLayout {
     /**
      * core
      */
-    private val bannerRv: RecyclerView = RecyclerView(context)
+    val bannerRv: RecyclerView = RecyclerView(context)
     /**
      * 当前位置
      */
@@ -207,6 +207,7 @@ class Banner : FrameLayout {
 
     constructor(context: Context, attributeSet: AttributeSet?, defStyleRes: Int) : super(context, attributeSet, defStyleRes) {
         getAttributes(context, attributeSet)
+        bannerRv.setHasFixedSize(true)
         bannerRv.layoutManager = LinearLayoutManager(context, orientation, false)
         BannerSnapHelper().apply {
             attachToRecyclerView(bannerRv)
@@ -253,7 +254,7 @@ class Banner : FrameLayout {
         indicatorSelectRes = a.getResourceId(R.styleable.Banner_banner_indicatorSelectRes, R.drawable.sp_default_indicator_selected)
         indicatorWidth = a.getDimensionPixelSize(R.styleable.Banner_banner_indicatorWidth, context.dpToPixel(20))
         indicatorHeight = a.getDimensionPixelSize(R.styleable.Banner_banner_indicatorHeight, context.dpToPixel(20))
-        indicatorItemSize = a.getDimensionPixelSize(R.styleable.Banner_banner_indicatorSize,context.dpToPixel(6))
+        indicatorItemSize = a.getDimensionPixelSize(R.styleable.Banner_banner_indicatorSize, context.dpToPixel(6))
         val indicatorGravityInt = a.getInt(R.styleable.Banner_banner_indicatorGravity, -1)
         indicatorGravity = when (indicatorGravityInt) {
             0 -> Gravity.LEFT

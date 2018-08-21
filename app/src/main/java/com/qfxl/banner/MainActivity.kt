@@ -3,13 +3,12 @@ package com.qfxl.banner
 import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.RecyclerView
 import android.widget.ImageView
 import com.bumptech.glide.Glide
-import com.leochuan.GalleryLayoutManager
-import com.leochuan.RotateLayoutManager
-import com.leochuan.ScaleLayoutManager
-import com.qfxl.view.*
+import com.bumptech.glide.request.RequestOptions
+import com.qfxl.view.Banner
+import com.qfxl.view.IBannerImageLoader
+import com.qfxl.view.toast
 
 class MainActivity : AppCompatActivity() {
     lateinit var banner: Banner
@@ -20,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         banner = findViewById(R.id.banner)
         banner.imageLoader = object : IBannerImageLoader {
             override fun displayImage(context: Context, path: Any, imageView: ImageView) {
-                Glide.with(context).load(path).into(imageView)
+                Glide.with(context).applyDefaultRequestOptions(RequestOptions().placeholder(R.drawable.img_placeholder)).load(path).into(imageView)
             }
         }
         banner.setBannerClickListener { position, _ ->
@@ -33,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         val bannerVertical = findViewById<Banner>(R.id.banner_vertical)
         bannerVertical.imageLoader = object : IBannerImageLoader {
             override fun displayImage(context: Context, path: Any, imageView: ImageView) {
-                Glide.with(context).load(path).into(imageView)
+                Glide.with(context).applyDefaultRequestOptions(RequestOptions().placeholder(R.drawable.img_placeholder)).load(path).into(imageView)
             }
         }
         bannerVertical.setBannerClickListener { position, _ ->

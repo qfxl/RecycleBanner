@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import com.qfxl.R
 import com.qfxl.view.IBannerImageLoader
+import com.qfxl.view.log
 
 /**
  * <pre>
