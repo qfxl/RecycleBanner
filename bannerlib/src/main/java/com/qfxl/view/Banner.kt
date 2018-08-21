@@ -27,6 +27,7 @@ import com.qfxl.R
 import com.qfxl.view.adapter.BannerAdapter
 import com.qfxl.view.adapter.DefaultBannerAdapter
 import com.qfxl.view.indicator.BannerIndicator
+import com.qfxl.view.layoutmanager.ViewPagerLayoutManager
 
 /**
  * <pre>
@@ -208,9 +209,7 @@ class Banner : FrameLayout {
     constructor(context: Context, attributeSet: AttributeSet?, defStyleRes: Int) : super(context, attributeSet, defStyleRes) {
         getAttributes(context, attributeSet)
         bannerRv.setHasFixedSize(true)
-        bannerRv.layoutManager = LinearLayoutManager(context, orientation, false)
-        BannerSnapHelper().apply {
-            attachToRecyclerView(bannerRv)
+        bannerRv.layoutManager = ViewPagerLayoutManager(context, orientation, false).apply {
             attachToBanner(this@Banner)
         }
         bannerRv.addOnScrollListener(object : RecyclerView.OnScrollListener() {

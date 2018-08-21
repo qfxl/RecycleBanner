@@ -15,7 +15,7 @@
         app:banner_indicatorHeight="20dp"
         app:banner_indicatorPosition="bottom"
         app:banner_isDefaultIndicator="true"
-        app:banner_isInfinityEnabled="true"
+        app:banner_isInfinityEnabled="false"
         app:banner_loopInterval="2000"
         app:banner_orientation="horizontal" />
 
