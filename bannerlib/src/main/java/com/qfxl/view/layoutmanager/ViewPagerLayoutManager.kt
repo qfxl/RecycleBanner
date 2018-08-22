@@ -21,7 +21,6 @@ import android.support.v7.widget.LinearSmoothScroller
 import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
 import android.util.DisplayMetrics
-import android.view.View
 import com.qfxl.view.Banner
 import com.qfxl.view.BannerSnapHelper
 
@@ -42,29 +41,6 @@ class ViewPagerLayoutManager : LinearLayoutManager {
 
     private val snapHelper = BannerSnapHelper()
 
-    private var mRecyclerView: RecyclerView? = null
-
-    private val mChildAttachStateChangeListener = object : RecyclerView.OnChildAttachStateChangeListener {
-        /**
-         * Called when a view is detached from RecyclerView.
-         *
-         * @param view The View which is being detached from the RecyclerView
-         */
-        override fun onChildViewDetachedFromWindow(view: View?) {
-
-        }
-
-        /**
-         * Called when a view is attached to the RecyclerView.
-         *
-         * @param view The View which is attached to the RecyclerView
-         */
-        override fun onChildViewAttachedToWindow(view: View?) {
-
-        }
-
-    }
-
     constructor(context: Context?) : super(context)
     constructor(context: Context?, orientation: Int, reverseLayout: Boolean) : super(context, orientation, reverseLayout)
     constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes)
@@ -80,8 +56,6 @@ class ViewPagerLayoutManager : LinearLayoutManager {
     override fun onAttachedToWindow(view: RecyclerView?) {
         super.onAttachedToWindow(view)
         snapHelper.attachToRecyclerView(view)
-        mRecyclerView = view
-        mRecyclerView?.addOnChildAttachStateChangeListener(mChildAttachStateChangeListener)
     }
 
     override fun smoothScrollToPosition(recyclerView: RecyclerView?, state: RecyclerView.State?, position: Int) {
@@ -93,13 +67,5 @@ class ViewPagerLayoutManager : LinearLayoutManager {
         }
         linearSmoothScroller.targetPosition = position
         startSmoothScroll(linearSmoothScroller)
-    }
-
-    override fun scrollVerticallyBy(dy: Int, recycler: RecyclerView.Recycler?, state: RecyclerView.State?): Int {
-        return super.scrollVerticallyBy(dy, recycler, state)
-    }
-
-    override fun scrollHorizontallyBy(dx: Int, recycler: RecyclerView.Recycler?, state: RecyclerView.State?): Int {
-        return super.scrollHorizontallyBy(dx, recycler, state)
     }
 }

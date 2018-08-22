@@ -54,7 +54,3 @@ fun Context.toast(msg: String) {
     Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
 }
 
-const val TAG = "qfxl"
-fun String.log() {
-    Log.i(TAG, this)
-}
