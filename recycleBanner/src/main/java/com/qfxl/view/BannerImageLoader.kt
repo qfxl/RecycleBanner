@@ -7,7 +7,7 @@ import android.widget.ImageView
 /**
  * <pre>
  *     author : qfxl
- *     e-mail : 3001567284@qq.com
+ *     e-mail : xuyonghong0822@gmail.com
  *     time   : 2018/07/18
  *     desc   :
  *     version: 1.0

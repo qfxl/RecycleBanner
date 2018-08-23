@@ -26,7 +26,7 @@ import com.qfxl.view.IBannerImageLoader
 /**
  * <pre>
  *     author : qfxl
- *     e-mail : 3001567284@qq.com
+ *     e-mail : xuyonghong0822@gmail.com
  *     time   : 2018/07/19
  *     desc   : default banner adapter
  *     version: 1.0

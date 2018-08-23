@@ -1,1 +1,1 @@
-include ':app', ':bannerlib'
+include ':app', ':recycleBanner'

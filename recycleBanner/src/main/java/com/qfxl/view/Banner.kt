@@ -168,12 +168,17 @@ class Banner : FrameLayout {
      * 轮播任务
      */
     private val loopTask = Runnable {
-        if (!isInfinityEnabled && adapter != null) {
-            if (position >= adapter!!.itemCount - 1) {
-                position = -1
+        if (position >= bannerRv.adapter!!.itemCount - 1) {
+            position = -1
+            if (isInfinityEnabled) {
+                position = bannerRv.adapter!!.itemCount / 2
+                bannerRv.scrollToPosition(position)
+            } else {
+                bannerRv.smoothScrollToPosition(++position)
             }
+        } else {
+            bannerRv.smoothScrollToPosition(++position)
         }
-        bannerRv.smoothScrollToPosition(++position)
         onPageChangeListeners.forEach {
             it.onPageSelected(if (isInfinityEnabled) position % adapter!!.itemCount else position)
         }
